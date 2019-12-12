@@ -1,0 +1,17 @@
+apply plugin: 'com.novoda.bintray-release'//添加
+
+
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+def bintrayUser = properties.getProperty('bintray.user')
+def bintrayApikey = properties.getProperty('bintray.apikey')
+
+
+publish {
+    userOrg = bintrayUser
+    groupId = 'com.tt.lib'
+    artifactId = 'network'
+    publishVersion = '1.0.0'
+    desc = ''
+    website = ''
+}
